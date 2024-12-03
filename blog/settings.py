@@ -74,18 +74,10 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DEBUG = config('DEBUG',default=False, cast = bool)
-
-SECRET_KEY = config('SECRET_KEY', default = 'default-secret-key')
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DATABASE_NAME', default='default_db_name'),
-        'USER': config('DATABASE_USER',deault='default_user'),
-        'PASSWORD': config('DATABASE_PASSWRD', default=''),
-        'HOST': config('DATABASE_HOST', default='localhost'),
-        'PORT': config('DATABASE_PORT', deault='5432')
+        'HOST': config('DATABASE_HOST'),
+        'PORT': config('DATABASE_PORT')
     }
 }
 
